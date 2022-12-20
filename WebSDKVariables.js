@@ -25,10 +25,10 @@ alloy("sendEvent", {
 });
 
 
-
-// Install Web SDK
 // Create schema
 // Create datastream
 // Add analytics service
+
+// Install Web SDK
 // Configure web sdk
 // Send web sdk event

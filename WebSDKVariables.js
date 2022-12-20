@@ -1,5 +1,6 @@
 alloy("configure", {
-    "edgeConfigId": "0dada9f4-fa94-4c9c-8aaf-fdbac6c56282"
+    "edgeConfigId": "0dada9f4-fa94-4c9c-8aaf-fdbac6c56282",
+    "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
 });
 
 alloy("sendEvent", {

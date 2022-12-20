@@ -3,6 +3,13 @@ alloy("configure", {
     "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
 });
 
+var r = {
+    "eVar_the_first": "Brand new unconventional value",
+    "Second_eVar": "Frog legs"
+}
+
+alloy("sendEvent",r);
+/*
 alloy("sendEvent", {
     "xdm": {
         "web": {
@@ -23,3 +30,4 @@ alloy("sendEvent", {
         }
     }
 });
+*/

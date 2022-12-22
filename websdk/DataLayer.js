@@ -3,31 +3,25 @@ alloy("configure", {
     "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
 });
 
-var r = {
-    "eVar_the_first": "Brand new unconventional value",
-    "Second_eVar": "Frog legs"
-}
-
-alloy("sendEvent",r);
-/*
-alloy("sendEvent", {
+var dataLayer = {
     "xdm": {
         "web": {
             "webPageDetails": {
-                "URL": window.document.URL,
-                "name": window.document.title
+                "name": document.title
             }
         },
         "_experience": {
             "analytics": {
                 "customDimensions": {
                     "eVars": {
-                        "eVar1": "Russ Web SDK 2",
-                        "eVar2": "Cotton plant"
+                        "eVar1": "Web SDK",
+                        "eVar2": Math.floor(Math.random() * 100) + 1,
+                        "eVar3": document.URL
                     }
                 }
             }
         }
     }
-});
-*/
+};
+
+alloy("sendEvent", dataLayer);

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Russ's implementation testing AppMeasurement page reprise</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <script src="AppMeasurement.js"></script>
+</head>
+
+<body>
+    <p>This is an alternate page for AppMeasurement tracking.</p>
+    <p><a href="index.html">Back to the main page for AppMeasurement</a></p>
+    <p><a href="../index.html">Back to the home page (tags)</a></p>
+    <p><button onclick="buttonClicked()">Click me for a link tracking call</button></p>
+    <p><div id="extraText"></div></p>
+    <p><a href="https://blindinglight.gg">External link to Blinding Light</a></p>
+    <script>
+        var s = s_gi("adobecx1russ");
+        s.trackingServer = "russ.data.adobedc.net";
+        s.pageName = document.title;
+        s.eVar1 = "AppMeasurement";
+        s.eVar2 = Math.floor(Math.random() * 100) + 1;
+        s.eVar3 = document.URL;
+        s.prop1 = "D=v1";
+        s.t();
+
+        var timesClicked = 0;
+        function buttonClicked() {
+            s.eVar1 = "AppMeasurement (link call)";
+            s.eVar2 = Math.floor(Math.random() * 100) + 1;
+            s.tl(true,"o","AppMeasurement button link");
+            timesClicked++;
+            document.getElementById("extraText").innerHTML = "s.tl() call sent! Calls sent so far: " + timesClicked;
+        }
+    </script>
+</body>
+
+</html>

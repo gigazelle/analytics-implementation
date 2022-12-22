@@ -3,6 +3,9 @@ alloy("configure", {
     "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
 });
 
+let params = new URLSearchParams(document.location.search);
+let dQuery = params.get("d");
+
 var dataLayer = {
     "xdm": {
         "web": {
@@ -16,7 +19,8 @@ var dataLayer = {
                     "eVars": {
                         "eVar1": "Web SDK",
                         "eVar2": Math.floor(Math.random() * 100) + 1,
-                        "eVar3": document.URL
+                        "eVar3": document.URL,
+                        "eVar4": dQuery
                     }
                 }
             }

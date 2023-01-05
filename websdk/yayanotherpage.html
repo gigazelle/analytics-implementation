@@ -3,6 +3,7 @@
 <head>
     <title>Russ's implementation testing Web SDK page - again!</title>
     <script>
+        // Web SDK loader tag
         !function (n, o) {
             o.forEach(function (o) {
                 n[o] || ((n.__alloyNS = n.__alloyNS || []).push(o), n[o] = function () {
@@ -23,6 +24,13 @@
     <p><a href="../index.html">Return all the way to home (tags)</a></p>
     <p><a href="https://blindinglight.gg">External link to Blinding Light</a></p>
     <script src="DataLayer.js"></script>
+    <script>
+        alloy("configure", {
+            "edgeConfigId": "a883addc-9384-449b-8ba0-bb474296e66d",
+            "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
+        });
+        alloy("sendEvent", dataLayer);
+    </script>
 </body>
 
 </html>

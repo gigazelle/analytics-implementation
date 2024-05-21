@@ -1,15 +1,15 @@
 <html>
 
 <head>
-    <title>AppMeasurement library page 1 - Russ's implementation testing</title>
+    <title>Web SDK extension page 2 - Russ's implementation testing</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://assets.adobedtm.com/22bf1a13013f/f1ab507ef9ef/launch-fa9185e25c6a.min.js" async></script>
     <link rel="stylesheet" href="/style.css">
-    <script src="AppMeasurement.js"></script>
 </head>
 
 <body>
-    <h1>AppMeasurement JavaScript library - page 1</h1>
-    <p>This page uses the <b>AppMeasurement</b> as its data collection method.</p>
+    <h1>Web SDK extension - page 2</h1>
+    <p>This page uses the <b>Web SDK extension</b> as its data collection method.</p>
     <p>
     <ul>
         <li>eVar1 is set to data collection method.</li>
@@ -49,39 +49,14 @@
         </tr>
     </table>
     <div class="icon-cell">
-        <a href="anotherpage.html" class="icon-link">
-            <img src="/images/Carminium.png">
-            <span>Another AppMeasurement page</span>
+        <a href="index.html" class="icon-link">
+            <img src="/images/Nebulaminita.png">
+            <span>Back to main Web SDK extension page</span>
         </a>
     </div>
     <p><a href="https://digitalsapphire.com">External link to Blinding Light</a></p>
     <p><a href="https://gigazelle.com">External link to portfolio</a></p>
-    <p><button onclick="buttonClicked()">Click me for a link tracking call</button></p>
-    <p><div id="extraText"></div></p>
-    <script>
-        var s = s_gi("adobecx1russ");
-        s.trackingServer = "russ.data.adobedc.net";
-        
-        s.pageName = document.title;
-        s.eVar1 = "AppMeasurement";
-        s.eVar2 = Math.floor(Math.random() * 100) + 1;
-        s.eVar3 = document.URL;
-        s.eVar4 = s.Util.getQueryParam("d");
-        s.prop1 = "D=v1";
-        s.trackExternalLinks = true;
-        s.collectHighEntropyUserAgentHints = true;
-        
-        s.t();
-
-        var timesClicked = 0;
-        function buttonClicked() {
-            s.eVar1 = "AppMeasurement (link call)";
-            s.eVar2 = Math.floor(Math.random() * 100) + 1;
-            s.tl(true,"o","AppMeasurement button link");
-            timesClicked++;
-            document.getElementById("extraText").innerHTML = "s.tl() call sent! Calls sent so far: " + timesClicked;
-        }
-    </script>
+    <script src="alloy/DataLayer.js"></script>
 </body>
 
 </html>

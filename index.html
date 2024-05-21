@@ -2,19 +2,55 @@
 
 <head>
     <title>Russ's implementation testing home page</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://assets.adobedtm.com/22bf1a13013f/f1ab507ef9ef/launch-fa9185e25c6a.min.js" async></script>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <p>Welcome! Click any of the links to go to the page that uses that implementation method. The <code>d</code> query
-        string populates eVar4.</p>
-    <p>This page uses tags as its method of implementation.</p>
-    <p><a href="anotherpage.html">Another page also implemented with tags</a></p>
-    <p><a href="appm/index.html">AppMeasurement</a></p>
-    <p><a href="websdk/index.html">Web SDK (manual)</a></p>
-    <p><a href="https://blindinglight.gg">External link to Blinding Light</a></p>
-    <script src="websdk/DataLayer.js"></script>
+    <h1>Home page</h1>
+    <p>Welcome! Click any of the links to go to the page that uses that implementation method.</p>
+    <p>
+    <ul>
+        <li>eVar1 is set to data collection method.</li>
+        <li>eVar2 is set to a random number between 1 and 100.</li>
+        <li>eVar3 is set to the URL of the page.</li>
+        <li>eVar4 is set to the <code>d</code> query string parameter.</li>
+    </ul>
+    </p>
+    <table>
+        <tr>
+            <td>
+                <a href="/websdk-ext/index.html" class="icon-link">
+                    <img src="/images/Nebulaminita.png">
+                    <span>Web SDK extension</span>
+                </a>
+            </td>
+            <td>
+                <a href="/analytics-ext/index.html" class="icon-link">
+                    <img src="/images/Chitinbrim.png">
+                    <span>Analytics extension</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/alloy/index.html" class="icon-link">
+                    <img src="/images/Syncopatium.png">
+                    <span>Web SDK JavaScript library (Alloy)</span>
+                </a>
+            </td>
+            <td>
+                <a href="/appm/index.html" class="icon-link">
+                    <img src="/images/Carminium.png">
+                    <span>Analytics JavaScript library (AppMeasurement)</span>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <p>This home page uses the Web SDK tag extension as its method of implementation.</p>
+    <p><a href="https://github.com/gigazelle/implementation-testing">Link to GitHub repo</a></p>
+    <script src="/DataLayer.js"></script>
 </body>
 
 </html>

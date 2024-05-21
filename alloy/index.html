@@ -1,15 +1,26 @@
 <html>
 
 <head>
-    <title>AppMeasurement library page 1 - Russ's implementation testing</title>
+    <title>Web SDK JavaScript library page 1 - Russ's implementation testing</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
-    <script src="AppMeasurement.js"></script>
+    <script>
+        !function (n, o) {
+            o.forEach(function (o) {
+                n[o] || ((n.__alloyNS = n.__alloyNS || []).push(o), n[o] = function () {
+                    var u = arguments;
+                    return new Promise(function (i, l) { n[o].q.push([i, l, u]) })
+                }, n[o].q = [])
+            })
+        }
+            (window, ["alloy"]);
+    </script>
+    <script src="https://cdn1.adoberesources.net/alloy/2.19.2/alloy.min.js" async></script>
 </head>
 
 <body>
-    <h1>AppMeasurement JavaScript library - page 1</h1>
-    <p>This page uses the <b>AppMeasurement</b> as its data collection method.</p>
+    <h1>Web SDK JavaScript library - page 1</h1>
+    <p>This page uses the <b>Web SDK JavaScript library</b> as its data collection method.</p>
     <p>
     <ul>
         <li>eVar1 is set to data collection method.</li>
@@ -49,38 +60,20 @@
         </tr>
     </table>
     <div class="icon-cell">
-        <a href="anotherpage.html" class="icon-link">
-            <img src="/images/Carminium.png">
-            <span>Another AppMeasurement page</span>
+        <a href="index.html" class="icon-link">
+            <img src="/images/Syncopatium.png">
+            <span>Back to Web SDK JavaScript main page</span>
         </a>
     </div>
     <p><a href="https://digitalsapphire.com">External link to Blinding Light</a></p>
     <p><a href="https://gigazelle.com">External link to portfolio</a></p>
-    <p><button onclick="buttonClicked()">Click me for a link tracking call</button></p>
-    <p><div id="extraText"></div></p>
+    <script src="alloy/DataLayer.js"></script>
     <script>
-        var s = s_gi("adobecx1russ");
-        s.trackingServer = "russ.data.adobedc.net";
-        
-        s.pageName = document.title;
-        s.eVar1 = "AppMeasurement";
-        s.eVar2 = Math.floor(Math.random() * 100) + 1;
-        s.eVar3 = document.URL;
-        s.eVar4 = s.Util.getQueryParam("d");
-        s.prop1 = "D=v1";
-        s.trackExternalLinks = true;
-        s.collectHighEntropyUserAgentHints = true;
-        
-        s.t();
-
-        var timesClicked = 0;
-        function buttonClicked() {
-            s.eVar1 = "AppMeasurement (link call)";
-            s.eVar2 = Math.floor(Math.random() * 100) + 1;
-            s.tl(true,"o","AppMeasurement button link");
-            timesClicked++;
-            document.getElementById("extraText").innerHTML = "s.tl() call sent! Calls sent so far: " + timesClicked;
-        }
+        alloy("configure", {
+            "edgeConfigId": "a883addc-9384-449b-8ba0-bb474296e66d",
+            "orgId": "53A16ACB5CC1D3760A495C99@AdobeOrg"
+        });
+        alloy("sendEvent", dataLayer);
     </script>
 </body>
 

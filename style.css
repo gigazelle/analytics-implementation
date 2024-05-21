@@ -1,0 +1,41 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 20px;
+}
+.icon-link img {
+    width: 32px;
+    height: 32px;
+}
+
+.icon-cell {
+    display: inline-block;
+    width: 25%;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.icon-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+.icon-link img {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 0 auto;
+}
+.icon-link span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}

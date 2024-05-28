@@ -5,6 +5,7 @@
     <link rel="icon" type="image/x-icon" href="/analytics-implementation/favicon.ico">
     <link rel="stylesheet" href="/analytics-implementation/style.css">
     <script src="AppMeasurement.js"></script>
+    <script src="VisitorAPI.js"></script>
 </head>
 
 <body>
@@ -61,7 +62,8 @@
     <script>
         var s = s_gi("adobecx1russ");
         s.trackingServer = "russ.data.adobedc.net";
-        
+        s.visitor = Visitor.getInstance("53A16ACB5CC1D3760A495C99@AdobeOrg");
+
         s.pageName = document.title;
         s.eVar1 = "AppMeasurement";
         s.eVar2 = Math.floor(Math.random() * 100) + 1;

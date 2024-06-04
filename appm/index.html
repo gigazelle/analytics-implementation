@@ -73,6 +73,8 @@
         s.trackExternalLinks = true;
         s.collectHighEntropyUserAgentHints = true;
         
+        s.ActivityMap.linkExclusions = "excluded"
+
         s.t();
 
         var timesClicked = 0;
@@ -86,6 +88,7 @@
     </script>
     <a href="anotherpage.html"><img src="/analytics-implementation/images/Carminium.png"></a>
     <a href="anotherpage.html" style="display: inline-block; width: 20px; height: 20px; border: 1px solid black;"></a>
+    <a href="anotherpage.html">This link is excluded from Activity Map</a>
 
 </body>
 

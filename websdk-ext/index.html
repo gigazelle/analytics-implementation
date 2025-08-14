@@ -3,6 +3,31 @@
 <head>
     <title>Web SDK extension page 1 - Russ's implementation testing</title>
     <link rel="icon" type="image/x-icon" href="/analytics-implementation/favicon.ico">
+    <script>
+        window._satellite = window._satellite || {};
+        window._satellite._monitors = window._satellite._monitors || [];
+        window._satellite._monitors.push({
+            ruleTriggered: function (event) {
+                console.log(
+                    'rule triggered',
+                    event.rule
+                );
+            },
+            ruleCompleted: function (event) {
+                console.log(
+                    'rule completed',
+                    event.rule
+                );
+            },
+            ruleConditionFailed: function (event) {
+                console.log(
+                    'rule condition failed',
+                    event.rule,
+                    event.condition
+                );
+            }
+        });
+    </script>
     <script src="https://assets.adobedtm.com/22bf1a13013f/f1ab507ef9ef/launch-fa9185e25c6a.min.js" async></script>
     <link rel="stylesheet" href="/analytics-implementation/style.css">
 </head>
